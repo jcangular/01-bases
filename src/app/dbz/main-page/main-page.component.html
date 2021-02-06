@@ -1,2 +1,14 @@
 <h1>Dragon Ball Z</h1>
 <hr>
+
+<div class="row">
+    <div class="col lista-personaje">
+        <!-- <app-characters [characters]="characters"></app-characters> -->
+        <app-characters></app-characters>
+    </div>
+
+    <div class="col agregar-personaje">
+        <!-- <app-add-character (characterAddEvent)="addCharacter($event)"></app-add-character> -->
+        <app-add-character [character]="defaultCharacter"></app-add-character>
+    </div>
+</div>

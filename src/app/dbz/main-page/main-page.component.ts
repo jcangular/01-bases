@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
+import { Character } from '../interface/dbz.interfaces';
+import { DbzService } from '../services/dbz.service';
 @Component({
-  selector: 'app-main-page',
-  templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.css']
+    selector: 'app-main-page',
+    templateUrl: './main-page.component.html',
+    styleUrls: ['./main-page.component.css']
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent {
 
-  constructor() { }
+    defaultCharacter: Character = { name: 'Trunks', power: 1020 };
 
-  ngOnInit(): void {
-  }
+    constructor(private dbzService: DbzService) { }
+
+    public addCharacter(character: Character): void {
+        this.dbzService.addCharacter(character);
+    }
 
 }
